@@ -6,4 +6,6 @@ public interface MyList extends List<Integer> {
 
 	MyList addLists(MyList listToAdd);
 	
+	void displayAsNumber();
+	
 }

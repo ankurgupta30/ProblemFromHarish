@@ -54,5 +54,12 @@ public class MyLinkedList extends LinkedList<Integer> implements MyList {
 		return finalList;
 	}
 
+	@Override
+	public void displayAsNumber() {
+		for(int index = this.size()-1; index>=0; index--)
+			System.out.print(this.get(index));
+		
+	}
+
 
 }
