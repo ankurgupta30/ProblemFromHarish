@@ -2,8 +2,8 @@ package interview.harish;
 
 import java.util.List;
 
-public interface MyList<Integer> extends List<Integer> {
+public interface MyList extends List<Integer> {
 
-	MyList<Integer> addLists(MyList<Integer> listToAdd);
+	MyList addLists(MyList listToAdd);
 	
 }

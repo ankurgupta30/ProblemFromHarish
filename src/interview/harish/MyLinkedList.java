@@ -1,24 +1,25 @@
 package interview.harish;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-public class MyLinkedList<Integer> extends LinkedList<Integer> implements MyList<Integer> {
+public class MyLinkedList extends LinkedList<Integer> implements MyList {
+
 
 	@Override
-	public boolean add(Integer element){
-		int exponent = element/10;
-		int remainder =  element%10;
-		add(exponent);
+	public boolean add(Integer value){
+		int exponent = value/10;
+		int remainder =  value%10;
+		if(exponent !=0)
+			add(exponent);
 		return super.add(remainder);	
 	}
 	
 	@Override
-	public MyList<Integer> addLists(MyList<Integer> listToAdd) {
+	public MyList addLists(MyList listToAdd) {
 		
 		
-		List<Integer> finalList = null;
+		MyList finalList = null;
 		if(null != listToAdd){
 			int carryOver = 0;
 			List<Integer> smaller,bigger = null;
@@ -31,7 +32,7 @@ public class MyLinkedList<Integer> extends LinkedList<Integer> implements MyList
 				bigger = this;
 			}
 			
-			finalList = new ArrayList(bigger.size());
+			finalList = new MyLinkedList();
 			int smallerListSize =  smaller.size();
 			for (int index=0; index<bigger.size(); index++){
 				if(smallerListSize > index){
@@ -50,10 +51,8 @@ public class MyLinkedList<Integer> extends LinkedList<Integer> implements MyList
 			
 					
 		}
-		if(null != finalList){
-			System.out.println("final List " + finalList);
-		}
 		return finalList;
 	}
+
 
 }

@@ -1,18 +1,18 @@
 package interview.harish;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class TestClass {
+public class MainClass {
 
 	public static void main(String[] args) {
-		MyList<Integer> firstList = new MyLinkedList<Integer>();
+		MyList firstList = new MyLinkedList();
 		firstList.add(2345);
-		MyList<Integer> secondList = new MyLinkedList<Integer>();
-		firstList.add(987);
+		System.out.println("firstList " + firstList);
+		MyList secondList = new MyLinkedList();
+		secondList.add(987);
+		System.out.println("secondList " + secondList);
 		
-		MyList<Integer> result = firstList.addLists(secondList);
+		MyList result = firstList.addLists(secondList);
 		System.out.println("final Result" + result);
+		
 	}
 
 	/*private void testUseCase(){
